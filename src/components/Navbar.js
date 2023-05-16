@@ -13,10 +13,10 @@ function Navbar(props) {
      <div className="collapse navbar-collapse" id="navbarSupportedContent">
        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
          <li className="nav-item">
-           <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+           <Link className="nav-link " aria-current="page" to="/">Home</Link>
          </li>
          <li className="nav-item">
-           <Link className="nav-link" to="/about">{props.aboutText}</Link>
+           <a className="nav-link" href="/about">{props.aboutText}</a>
          </li>
  
        </ul>
@@ -33,7 +33,7 @@ function Navbar(props) {
     </nav>
   )
 }
-export default Navbar
+export default Navbar;
 Navbar.propTypes = {
     title : PropTypes.string.isRequired,
     aboutText : PropTypes.string.isRequired

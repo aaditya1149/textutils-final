@@ -19,14 +19,14 @@ function App() {
   }
   setTimeout(() => {
     setalert(null);
-  }, 4000);
+  }, 1500);
 
   const [mode, setmode] = useState("light")
   const toggleMode =() => {
     if (mode === "light"){
       setmode("dark");
       settexts("Enable LightMode");
-      document.body.style.backgroundColor = "#100324f0";
+      document.body.style.backgroundColor = "#042743";
       showAlert("Dark Mode Activated", "success");
     }
     else {
@@ -45,13 +45,11 @@ function App() {
     <Alert alert = {alert}/>
 
     <div className="container my-3" >
-    <Routes>      {/* Switches */}
-    <Route path="/about" element = {<About />} />
-      
- 
+    <Routes>
 
-    <Route path="/" element= {<TextForm showAlert={showAlert} heading ="Enter your text below to analyze." mode ={mode}/>} />
-       
+    <Route exact path="/" element= {<TextForm showAlert={showAlert} heading ="Enter your text below to analyze." mode ={mode}/>} />
+
+     <Route exact path ="/about" element={<About mode={mode}/>} />  
     </Routes>
     </div>
 
